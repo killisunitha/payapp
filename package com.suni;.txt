@@ -11,13 +11,13 @@ public  class menu
 		 int x=sc.nextInt();
 		if(x==1)
 		{
-			System.out.println(" your in  Login page");
+			System.out.println("   Login page");
 			useractionsimplements useractionsimplement =new useractionsimplements();
 			useractionsimplement.userlogin();
 		}
 		
 		else if (x==2){
-			System.out.println(" your in registration page");
+			System.out.println("  Registration page");
 			useractionsimplements useractionsimplement =new useractionsimplements();
 			useractionsimplement.userregistration();
 		}
@@ -39,52 +39,10 @@ public  class menu
 	
 
 }
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+USING INTERFACE
 
-package com.hema;
-
-import java.util.Scanner;
-
-public  class menu 
-{
-  Scanner sc=new Scanner(System.in);
-	void displaymenu()
-	{
-	System.out.println(" enter 1 for Login and 2 for Registration :");
-		 int x=sc.nextInt();
-		if(x==1)
-		{
-			System.out.println(" your in  Login page");
-			useractionsimplements useractionsimplement =new useractionsimplements();
-			useractionsimplement.userlogin();
-		}
-		
-		else if (x==2){
-			System.out.println(" your in registration page");
-			useractionsimplements useractionsimplement =new useractionsimplements();
-			useractionsimplement.userregistration();
-		}
-		else {
-			useractionsimplements useractionsimplement =new useractionsimplements();
-			 useractionsimplement.userdisplay();
-		}
-		
-	}
-	
-	public static void main(String args[])
-	{
-		menu m=new menu();
-		m.displaymenu();
-	
-	
-	}
-	
-	
-
-}
-
-
-
-package com.hema;
+package com.suni;
 
 public interface useractions 
 {
@@ -95,11 +53,11 @@ public interface useractions
 	void userdisplay();
 	
 }
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+USING ARRAY LIST
 
 
-
-
-package com.hema;
+package com.suni;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -171,17 +129,14 @@ public  class useractionsimplements  implements useractions
 	}
 	@Override
 	public void displaymenu() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stu
 		
 	}
 	
 }
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-
-package com.hema;
+package com.suni;
 
 public class users {
 	private int userid;
