@@ -1,0 +1,269 @@
+package com.suni;
+
+import java.util.Scanner;
+
+public  class menu 
+{
+  Scanner sc=new Scanner(System.in);
+	void displaymenu()
+	{
+	System.out.println(" enter 1 for Login and 2 for Registration :");
+		 int x=sc.nextInt();
+		if(x==1)
+		{
+			System.out.println(" your in  Login page");
+			useractionsimplements useractionsimplement =new useractionsimplements();
+			useractionsimplement.userlogin();
+		}
+		
+		else if (x==2){
+			System.out.println(" your in registration page");
+			useractionsimplements useractionsimplement =new useractionsimplements();
+			useractionsimplement.userregistration();
+		}
+		else {
+			useractionsimplements useractionsimplement =new useractionsimplements();
+			 useractionsimplement.userdisplay();
+		}
+		
+	}
+	
+	public static void main(String args[])
+	{
+		menu m=new menu();
+		m.displaymenu();
+	
+	
+	}
+	
+	
+
+}
+
+package com.hema;
+
+import java.util.Scanner;
+
+public  class menu 
+{
+  Scanner sc=new Scanner(System.in);
+	void displaymenu()
+	{
+	System.out.println(" enter 1 for Login and 2 for Registration :");
+		 int x=sc.nextInt();
+		if(x==1)
+		{
+			System.out.println(" your in  Login page");
+			useractionsimplements useractionsimplement =new useractionsimplements();
+			useractionsimplement.userlogin();
+		}
+		
+		else if (x==2){
+			System.out.println(" your in registration page");
+			useractionsimplements useractionsimplement =new useractionsimplements();
+			useractionsimplement.userregistration();
+		}
+		else {
+			useractionsimplements useractionsimplement =new useractionsimplements();
+			 useractionsimplement.userdisplay();
+		}
+		
+	}
+	
+	public static void main(String args[])
+	{
+		menu m=new menu();
+		m.displaymenu();
+	
+	
+	}
+	
+	
+
+}
+
+
+
+package com.hema;
+
+public interface useractions 
+{
+ 
+	void userlogin();
+	void userregistration();
+	void displaymenu();
+	void userdisplay();
+	
+}
+
+
+
+
+package com.hema;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public  class useractionsimplements  implements useractions
+{
+	ArrayList< users> ul=new ArrayList<>();
+	Scanner sc=new Scanner(System.in);
+		public void userlogin() 
+{
+	
+	System.out.println("enter user name:");
+	String username=sc.next();
+	
+	System.out.println("enter your phonenumber:");
+	 int phn =sc.nextInt();
+	 
+	 userdisplay();
+	 }
+	public void userregistration()
+{
+		System.out.println("enter user id: ");
+		int userid=sc.nextInt();
+		sc.nextLine();
+	System.out.println("enter first name: ");
+	String firstname=sc.nextLine();
+	
+	
+	System.out.println("enter second name: ");
+	String secondname=sc.nextLine();
+	
+	System.out.println("enter phonenumber: ");
+	String phonenumber=sc.nextLine();
+	
+	System.out.println(" enter email");
+	String email=sc.nextLine();
+	
+	
+	System.out.println("enter your  password");
+	String password=sc.next();
+	
+	
+	System.out.println("enter your  address");
+	String address=sc.next();
+	
+	
+	users user1 = new users(userid,firstname, secondname,phonenumber, email, address);
+	ul.add(user1);
+	System.out.println("Registration succesfully");
+	userlogin();
+	
+}
+	@Override
+	public void userdisplay()
+	{
+		if(ul.isEmpty())
+		{
+			System.out.println("user is not registration");
+		}
+		else {
+			for (users user:ul)
+			{
+			System.out.println("users : "+user);
+		}
+	}
+		
+		 
+		
+	}
+	@Override
+	public void displaymenu() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+
+
+
+
+
+package com.hema;
+
+public class users {
+	private int userid;
+	
+	 private String firstName;
+	    private String lastName;
+	    private String phoneNumber;
+	    private String email;
+	    private String address;
+	    public users(int userid, String firstName, String lastName, String phoneNumber, String email,
+				String address) {
+			super();
+			this.userid = userid;
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.phoneNumber = phoneNumber;
+			this.email = email;
+			this.address = address;
+		}
+		
+	
+
+	public int getUserid() {
+			return userid;
+		}
+
+		public void setUserid(int userid) {
+			this.userid = userid;
+		}
+
+		
+
+		public String getFirstName() {
+			return firstName;
+		}
+
+		public void setFirstName(String firstName) {
+			this.firstName = firstName;
+		}
+
+		public String getLastName() {
+			return lastName;
+		}
+
+		public void setLastName(String lastName) {
+			this.lastName = lastName;
+		}
+
+		public String getPhoneNumber() {
+			return phoneNumber;
+		}
+
+		public void setPhoneNumber(String phoneNumber) {
+			this.phoneNumber = phoneNumber;
+		}
+
+		public String getEmail() {
+			return email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getAddress() {
+			return address;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+
+
+		@Override
+		public String toString() {
+			return "users [userid=" + userid + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber="
+					+ phoneNumber + ", email=" + email + ", address=" + address + "]";
+		}
+		
+
+	
+
+}
+
